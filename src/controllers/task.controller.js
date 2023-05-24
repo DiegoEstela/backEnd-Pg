@@ -3,7 +3,7 @@ const pool = require("../db/db.js");
 const getAllTask = async (req, res, next) => {
   try {
     const allTask = await pool.query("SELECT * FROM taskdb");
-    res.json(allTask.rows, next);
+    res.json(allTask.rows);
   } catch (error) {
     next(error);
   }
