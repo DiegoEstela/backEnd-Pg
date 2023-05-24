@@ -1,8 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-require("dotenv").config();
-const PORT = process.env.PORT || 8080;
 const taskRoutes = require("./routes/task.routes");
 
 const app = express();
@@ -17,6 +15,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor http escuchando en el puerto ${PORT}`);
-});
+module.exports = app;
